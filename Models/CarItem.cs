@@ -26,5 +26,9 @@ namespace cardata_api_v3.Models
         public Nullable<int> ModelYearF { get; set; }
         public string Generation { get; set; }
         public string PhotoLink { get; set; }
+
+        public Nullable<int> ValuePoints { get; set; }
+        public string PlateNumber { get; set; }
+        public long OwnerId { get; set; }
     }
 }

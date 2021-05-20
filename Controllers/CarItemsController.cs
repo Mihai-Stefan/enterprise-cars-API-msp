@@ -22,7 +22,8 @@ namespace cardata_api_v3.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CarItem>>> GetCarItems()
         {
-            return await _context.CarItems.ToListAsync();
+            //return await _context.CarItems.ToListAsync();
+            return await _context.CarItems.Where(x => x.Company.ToLower()=="audi").ToListAsync();
         }
 
         // GET: api/CarItems/5
