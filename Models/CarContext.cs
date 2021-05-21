@@ -14,6 +14,6 @@ namespace cardata_api_v3.Models
         }
 
         public DbSet<CarItem> CarItems { get; set; }
-        //public DbSet<Employee> Employees { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
