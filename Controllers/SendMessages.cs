@@ -11,7 +11,7 @@ namespace cardata_api_v3.Controllers
         {
             // daca memorez api_key intr-o variabila de sistem
             //var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
-            var apiKey = "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";
+            var apiKey = "hidden not to be exposed on git public repo";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("mihaiste@gmail.com");
             var to = new EmailAddress(email);
