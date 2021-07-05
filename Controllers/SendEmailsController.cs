@@ -31,7 +31,7 @@ namespace cardata_api_v3.Controllers
             }
         }
 
-        public void Get()
+        public void Post()
         {
             Response.Redirect("https://localhost:44391/admin");
         }

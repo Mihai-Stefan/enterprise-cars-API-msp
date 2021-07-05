@@ -30,7 +30,6 @@ namespace cardata_api_v3.Controllers
 
             //send email, by calling client:
             var response = await client.SendEmailAsync(msg);
-            var x = 20;
 
 
         }

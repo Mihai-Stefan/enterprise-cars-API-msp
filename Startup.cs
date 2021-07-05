@@ -26,12 +26,15 @@ namespace cardata_api_v3
 
             services.AddControllers();
             services.AddDbContext<CarContext>(options =>
-  options.UseSqlServer(Configuration.GetConnectionString("CarsDatabase")));
+            options.UseSqlServer(Configuration.GetConnectionString("CarsDatabase")));
 
             //Cors
             services.AddCors(options => options.AddDefaultPolicy(
-                        builder => builder.AllowAnyOrigin()));
+                        builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
         }
+
+
 
 
 
