@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 
@@ -9,9 +10,8 @@ namespace cardata_api_v3.Controllers
     {
         public static async Task SendMail(string name, string email)
         {
-            // daca memorez api_key intr-o variabila de sistem
-            //var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
-            var apiKey = "hidden not to be exposed on git public repo";
+            // read apiKey from environment variable
+            var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("mihaiste@gmail.com");
             var to = new EmailAddress(email);
@@ -19,7 +19,8 @@ namespace cardata_api_v3.Controllers
             var plainTextContent = "This is the plain message text.";
             var htmlContent = "<b> And this is HTML content of the message</b>" +
                 "<h3>Second mail</h3>";
-            //acum creem mailul, cu ajutorul constructorului:
+
+            //Using constructor to create mail
             var msg = MailHelper.CreateSingleEmail(
                 from,
                 to,
